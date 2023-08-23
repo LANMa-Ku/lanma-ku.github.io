@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLaMA-2-Datacom Project</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>LLaMA-2-Datacom: Model Trained With Datacom Knowledge</h1>
+
+    <p>
+        🤗 <a href="https://huggingface.co/engkufizz" target="_blank">HF Repo</a> • 🐦 <a href="https://twitter.com/engkufizz" target="_blank">Twitter</a>
+    </p>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#project-description">Project Description</a></li>
+        <li><a href="#results-and-examples">Results and Examples</a></li>
+        <li><a href="#limitations-and-future-improvements">Limitations and Future Improvements</a></li>
+        <li><a href="#license">License</a></li>
+        <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ul>
+
+    <h2 id="project-description">Project Description</h2>
+    <p>
+        A proof of concept involves finetuning Meta's llama-7b using a custom Datacom dataset that I generated with the self-instruction techniques. I believe that locally hosted models have the potential to serve as interesting alternatives to OpenAI API calls and vector databases for constructing assistants aimed at assisting with specific tasks and providing information.
+    </p>
+
+    <h3>Training data</h3>
+    <p>
+        <img src="assets/LossLearningRate.jpeg" width="600" alt="Loss & Learning Rate">
+    </p>
+
+    <h2 id="results-and-examples">Results and Examples</h2>
+    <p>
+        I fully expected complete gibberish from the first attempt, but I am pleasantly surprised by the quality of the results:
+    </p>
+
+    <table>
+        <tr>
+            <th>Base Llama2</th>
+            <th>llama-2-datacom</th>
+        </tr>
+        <tr>
+            <td><img src="assets/BaseLlama2.jpeg" width="600" alt="Base Llama2"></td>
+            <td><img src="assets/DatacomLlama2.jpeg" width="600" alt="llama-2-datacom"></td>
+        </tr>
+    </table>
+
+    <p>
+        Clearly, base Llama 7b has no idea what's going on and can't provide information about datacom configurations. However, when augmented with llama-2-datacom, it has no issues generating high quality responses that are clearly derived from the new datacom dataset.
+    </p>
+
+    <h2 id="limitations-and-future-improvements">Limitations and Future Improvements</h2>
+    <p>
+        Being a language model, llama-2-datacom is prone to hallucinations and can make up details or give incorrect information. That being said, this is still very much in the early stages, and the output could be improved and refined in a number of ways. The obvious thing being that it's not really advisable to use the default chat assistant from the webui for prompting. Lastly, there is certainly room for improvement in enhancing the dataset, those who are interested can contribute by submitting pull requests.
+    </p>
+
+    <h2 id="license">License</h2>
+    <p>
+        This project is licensed under the MIT License.
+    </p>
+
+    <h2 id="acknowledgements">Acknowledgements</h2>
+    <p>
+        Wouldn't have thought of this without <a href="https://github.com/tatsu-lab/stanford_alpaca" target="_blank">Stanford's Alpaca research</a>. A special thank you goes to them for contributing the script to generate the dataset and the code for the training.
+    </p>
+</body>
+</html>
